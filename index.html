@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light background */
+            color: #334155; /* Dark gray text */
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scroll for nav links */
+        }
+        .section-padding {
+            padding: 4rem 2rem; /* Consistent padding for sections */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 4rem;
+            }
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+            padding: 2rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        .btn-primary {
+            background-color: #3b82f6; /* Blue-600 */
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb; /* Blue-700 */
+            transform: translateY(-1px);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        .header-link {
+            transition: color 0.2s ease-in-out;
+        }
+        .header-link:hover {
+            color: #3b82f6; /* Blue-600 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center px-4 md:px-8">
+            <a href="#" class="text-2xl font-bold text-gray-800">OM CHAUHAN</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#about" class="header-link text-gray-600 hover:text-blue-600 font-medium">About</a></li>
+                <li><a href="#skills" class="header-link text-gray-600 hover:text-blue-600 font-medium">Skills</a></li>
+                <li><a href="#projects" class="header-link text-gray-600 hover:text-blue-600 font-medium">Projects</a></li>
+                <li><a href="#contact" class="header-link text-gray-600 hover:text-blue-600 font-medium">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 text-2xl">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-gray-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#about" class="text-gray-800 hover:text-blue-600" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="#skills" class="text-gray-800 hover:text-blue-600" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Skills</a>
+            <a href="#projects" class="text-gray-800 hover:text-blue-600" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Projects</a>
+            <a href="#contact" class="text-gray-800 hover:text-blue-600" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero/About Me Section -->
+    <section id="about" class="section-padding bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+        <div class="container mx-auto">
+            <img src="PHOT.jpg" alt="Your Profile Picture" class="rounded-full w-36 h-36 mx-auto mb-6 border-4 border-white shadow-lg background-size :cover">
+            <h2 class="text-5xl font-extrabold mb-4 leading-tight">Hi, I'm <span class="text-yellow-300">Om Chauhan</span></h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                A passionate [Frontend Developer/Role, e.g., Web Developer, UI/UX Designer, Data Scientist] with expertise in [Design and develop complex, React ]. I love building innovative solutions and bringing ideas to life.
+            </p>
+            <a href="#contact" class="btn-primary inline-block">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-white">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-gray-800 mb-12">My Skills</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="card flex flex-col items-center text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-500 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Frontend Development</h4>
+                    <p class="text-gray-600">HTML, CSS, JavaScript, React, Vue.js, Tailwind CSS</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="card flex flex-col items-center text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Backend Development</h4>
+                    <p class="text-gray-600">Node.js, Express, Python, Django, REST APIs</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="card flex flex-col items-center text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-500 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-9 11l-4-4 1.41-1.41L10 12.17l6.59-6.59L18 7l-8 8z"></path></svg>
+                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Database Management</h4>
+                    <p class="text-gray-600">MongoDB, PostgreSQL, MySQL, Firebase</p>
+                </div>
+                <!-- Add more skill cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-gray-800 mb-12">My Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="card text-left">
+                    <img src="https://placehold.co/400x250/e2e8f0/4a5568?text=Project+1" alt="Project 1 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">Project Title One</h4>
+                    <p class="text-gray-600 mb-4">
+                        A brief description of Project One. Highlight the technologies used and the problem it solves.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">MongoDB</span>
+                    </div>
+                    <a href="#" class="text-blue-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="card text-left">
+                    <img src="https://placehold.co/400x250/e2e8f0/4a5568?text=Project+2" alt="Project 2 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">Project Title Two</h4>
+                    <p class="text-gray-600 mb-4">
+                        A brief description of Project Two. Focus on your contribution and the impact.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Django</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                    </div>
+                    <a href="#" class="text-blue-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="card text-left">
+                    <img src="https://placehold.co/400x250/e2e8f0/4a5568?text=Project+3" alt="Project 3 Thumbnail" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">Project Title Three</h4>
+                    <p class="text-gray-600 mb-4">
+                        A brief description of Project Three. What did you learn from it?
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Vanilla JS</span>
+                        <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML/CSS</span>
+                    </div>
+                    <a href="#" class="text-blue-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-blue-600 text-white text-center">
+        <div class="container mx-auto max-w-2xl">
+            <h3 class="text-4xl font-bold mb-6">Let's Connect!</h3>
+            <p class="text-xl mb-8 opacity-90">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            <form class="space-y-6">
+                <div>
+                    <input type="text" id="name" name="name" placeholder="Your Name"
+                           class="w-full p-4 rounded-lg bg-blue-700 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white">
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Your Email"
+                           class="w-full p-4 rounded-lg bg-blue-700 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white">
+                </div>
+                <div>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message"
+                              class="w-full p-4 rounded-lg bg-blue-700 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                </div>
+                <button type="submit" class="btn-primary bg-white text-blue-600 hover:bg-gray-100 w-full md:w-auto">
+                    Send Message
+                </button>
+            </form>
+            <div class="mt-8 text-lg">
+                <p>Email: <a href="mailto:your.email@example.com" class="underline hover:text-yellow-300">omchauhan205@gmail.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" class="underline hover:text-yellow-300">+91 9305580497</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Social Media Links (replace # with your actual links) -->
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.768 7.83 6.602 9.124.482.088.66-.209.66-.465v-1.69c-2.695.586-3.268-1.298-3.268-1.298-.44-.997-.999-1.261-.999-1.261-.815-.556.061-.545.061-.545.901.064 1.378.924 1.378.924.8 1.376 2.103.979 2.61.748.087-.58.349-.979.635-1.202-2.007-.227-4.11-1.004-4.11-4.464 0-.985.35-1.789.924-2.422-.093-.227-.4-.972.088-2.404 0 0 .753-.242 2.47.922a8.655 8.655 0 014.24-.979c1.442 0 2.88.328 4.24.979 1.717-1.164 2.47-.922 2.47-.922.488 1.432.177 2.177.088 2.404.574.633.924 1.437.924 2.422 0 3.468-2.103 4.237-4.11 4.464.359.309.678.919.678 1.852v2.748c0 .256.178.553.66.465C19.232 19.83 22 16.237 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.34-1.6.56-2.46.66.89-.53 1.57-1.37 1.89-2.37-.83.49-1.75.85-2.72 1.04C18.37 4.54 17.29 4 16.08 4c-2.36 0-4.29 1.93-4.29 4.29 0 .34.04.67.11.98C8.26 9.13 5.4 7.6 3.56 5.17c-.37.64-.58 1.39-.58 2.19 0 1.49.76 2.81 1.91 3.59-.7-.02-1.37-.21-1.95-.5v.05c0 2.08 1.48 3.81 3.44 4.2-1.82.5-2.65.08-3.23-.29.55 1.7 2.14 2.94 4.02 2.97-1.48 1.16-3.35 1.85-5.38 1.85-.35 0-.7 0-1.04-.06C2.9 20.29 5.06 21 7.37 21c8.84 0 13.68-7.31 13.68-13.68 0-.21-.01-.42-.01-.63.94-.68 1.75-1.53 2.39-2.5z"/></svg>
+                </a>
+                <!-- Add more social icons (e.g., Instagram, LinkedIn) -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close mobile menu when a link is clicked (handled inline in HTML for simplicity)
+    </script>
+</body>
+</html>
